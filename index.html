@@ -1,0 +1,34 @@
+<html>
+    <body>
+        <from onsubmit="saveToLocalStorage(event)">
+        <label>Name</label>
+        <input type="text" name="username" required/>
+        <label>EmailId</label>
+        <input type="email" name="emailId" required/>
+        <label>Phone Number</label>
+        <input type="tel" name="Phonenumber" required/>
+        <button> Submit </button>
+    </from>
+    <ul id='listOfitems'></ul>
+    <script>
+        function saveToLocalStorage(event){
+            event.preventDefault();
+            const name = event.target.usernm.value;
+            const email = event.target.emailId.value;
+            const Phonenumber=event.target.Phonenumber.value;
+            const obj= {
+                name,
+                email,
+                Phonenumber
+            }
+            localStorage.setItem(obj.email,JSON.stringify(obj))
+            showUserOnScreen(obj)
+        }
+        function showUserOnScreen(obj){
+            const parentELem = document.getElementById('listofitems')
+            const childElem = document.createElement('li')
+            childElem.appendChild(childElem)
+        }
+    </script>
+    </body>
+</html>
